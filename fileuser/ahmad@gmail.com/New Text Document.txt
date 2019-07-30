@@ -1,0 +1,9 @@
+include("code/function/functions.php");
+$page = "LOGIN";
+if (isset($_SESSION["user"])) {
+	header("Location: ../lesson/index.php");
+} elseif (isset($_GET['user'])) {
+	if($_GET['user'] == 'register') {
+		$page = "REGISTER";
+	}
+}

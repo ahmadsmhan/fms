@@ -1,0 +1,22 @@
+body {
+  background-image: url("fms/code/icon/back.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-color: #cccccc;
+}
+.info {
+  border-color: #2196F3;
+  color: white;
+  background: #357bd1;
+
+
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+input[type=text] {
+  border: 3px solid #357bd1;
+  border-radius: 4px;
+}

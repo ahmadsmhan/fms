@@ -1,0 +1,40 @@
+<form method="POST" action="upload.php" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
+<form  action="index.php" method="post">
+ <input  type="text" name="creat"/> <br />
+  <input type="submit" value="new folder"name="creat1"/> <br />
+ </form>
+<?php
+
+if (isset($_POST["creat1"])) {
+  mkdir('uploads/directory' .$_POST["creat"], 0777, true);
+} else {
+    echo "N0, creat is set";
+}
+
+ ?>
+
+
+<?php
+$files = scandir("uploads");
+for ($a = 2; $a < count($files); $a++)
+{
+    ?>
+    <p>
+        <?php echo $files[$a]; ?>
+<button style="background-color: #4CAF50;margin-left: 250px;" type="button" name="button"><a style="  text-decoration: none;
+" href="uploads/<?php echo $files[$a];  ?>" download="">
+    Download
+</a></button>
+
+<button  style="background-color: red; margin-left: 350px;" type="button" name="button"><a  style="  text-decoration: none;
+" href="delete.php?name=uploads/<?php echo $files[$a]; ?>" style="color: red;">
+      Delete
+  </a></button>
+
+
+    <?php
+
+}
